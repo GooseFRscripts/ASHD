@@ -1,45 +1,45 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "ScriptWave",
-    LoadingTitle = "ScriptWave",
-    LoadingSubtitle = "by Devidk",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil, -- Create a custom folder for your hub/game
-       FileName = "ScriptWave Hub"
-    },
-    Discord = {
-       Enabled = false,
-       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-    },
-    KeySystem = True, -- Set this to true to use our key system
-    KeySettings = {
-       Title = "Untitled",
-       Subtitle = "Key System",
-       Note = "Key: ScriptWave",
-       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = {"ScriptWave"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
-    }
- })
+   Name = "ScriptWaveV1",
+   LoadingTitle = "ScriptWave",
+   LoadingSubtitle = "by Devidk",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = ScriptWave, -- Create a custom folder for your hub/game
+      FileName = "ScriptWave Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "ScriptWave Key System",
+      Subtitle = "This is to support our Creators of the script.",
+      Note = "Join For Key! Discord:https://discord.gg/xAwjMThQBH.",
+      FileName = "Keyfryesmrwhatasd", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"O9W67D2U"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
 
- local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
+local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
 
- local Slider = PlayerTab:CreateSlider({
-    Name = "JumpHeight",
-    Range = {50, 500},
-    Increment = 1,
-    Suffix = "Height",
-    CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-    end,
+local Slider = PlayerTab:CreateSlider({
+   Name = "JumpHeight",
+   Range = {50, 500},
+   Increment = 1,
+   Suffix = "Height",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+   end,
    })
-    local Slider = PlayerTab:CreateSlider({
+   local Slider = PlayerTab:CreateSlider({
       Name = "WalkSpeed",
       Range = {16, 500},
       Increment = 1,
@@ -50,42 +50,44 @@ local Window = Rayfield:CreateWindow({
       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
       end,
 })   
- 
- local ScriptsTab = Window:CreateTab("ScriptsLoader", 4483362458) -- Title, Image
 
- local Button = ScriptsTab:CreateButton({
-    Name = "InfyieldLoader",
-    Callback = function(v)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-    end,
- })
-    local Button = ScriptsTab:CreateButton({
+local ScriptsTab = Window:CreateTab("ScriptsLoader", 4483362458) -- Title, Image
+
+local Button = ScriptsTab:CreateButton({
+   Name = "InfyieldLoader",
+   Callback = function(v)
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end,
+})
+   local Button = ScriptsTab:CreateButton({
       Name = "Nuthub",
       Callback = function(v)
          loadstring(game:HttpGet("https://raw.githubusercontent.com/01iq/scripthub/refs/heads/main/solara",true))()
       end,
-  })
+})
       local Button = ScriptsTab:CreateButton({
          Name = "Vapev4",
          Callback = function(v)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
          end,
- })
+})
 
- local BalantTab = Window:CreateTab("Balant", 4483362458) -- Title, Image
+local BalantTab = Window:CreateTab("Balant", 4483362458) -- Title, Image
 
- local Toggle = BalantTab:CreateToggle({
+local Label = BalantTab:CreateLabel("Fly is G")
+
+local Toggle = BalantTab:CreateToggle({
    Name = "InfJump",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(InfiniteJumpEnabled)
       local InfiniteJumpEnabled = true
       game:GetService("UserInputService").JumpRequest:connect(function()
-          if InfiniteJumpEnabled then
-              game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-          end
+         if InfiniteJumpEnabled then
+            game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+         end
       end)
-  end,
+end,
 })
 local Toggle = BalantTab:CreateToggle({
    Name = "Fly",
@@ -95,3 +97,18 @@ local Toggle = BalantTab:CreateToggle({
       loadstring(game:HttpGet("https://pastebin.com/raw/S5TYmnTm", true))()
    end,
 })
+
+local CreditsTab = Window:CreateTab("CreditsAndInfo", 4483362458) -- Title, Image
+
+local Label = CreditsTab:CreateLabel("Fully Scripted By Devidk")
+print("Faggot")
+print("If your skidding this shit thats sad because this was worked on by somone who has no idea what he doing so tbh kys| And if you arent THANKS FOR USING THE SCRIPT!")
+local Label = CreditsTab:CreateLabel("More updates to Balant, Player soon and Settings!")
+local Label = CreditsTab:CreateLabel("UI was made by Rayfield. Executor in the works..")
+
+local SettingsTab = Window:CreateTab("Settings", 4483362458) -- Title, Image
+local Label = CreditsTab:CreateLabel("This Tab is currently Being worked on!")
+
+
+
+Rayfield:LoadConfiguration()
