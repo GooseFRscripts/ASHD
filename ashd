@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "ScriptWaveV1",
+   Name = "ScriptWave",
    LoadingTitle = "ScriptWave",
    LoadingSubtitle = "by Devidk",
    ConfigurationSaving = {
@@ -14,7 +14,7 @@ local Window = Rayfield:CreateWindow({
       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
-   KeySystem = true, -- Set this to true to use our key system
+   KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "ScriptWave Key System",
       Subtitle = "This is to support our Creators of the script.",
@@ -49,8 +49,9 @@ local Slider = PlayerTab:CreateSlider({
       Callback = function(Value)
       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
       end,
-})   
-
+   })
+     
+      
 local ScriptsTab = Window:CreateTab("ScriptsLoader", 4483362458) -- Title, Image
 
 local Button = ScriptsTab:CreateButton({
@@ -64,13 +65,13 @@ local Button = ScriptsTab:CreateButton({
       Callback = function(v)
          loadstring(game:HttpGet("https://raw.githubusercontent.com/01iq/scripthub/refs/heads/main/solara",true))()
       end,
-})
+   })   
       local Button = ScriptsTab:CreateButton({
-         Name = "Vapev4",
+         Name = "Aurora|Bedwars Script!",
          Callback = function(v)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/cocotv666/Aurora/refs/heads/main/Aurora_Loader'))()
          end,
-})
+      })
 
 local BalantTab = Window:CreateTab("Balant", 4483362458) -- Title, Image
 
@@ -96,20 +97,23 @@ local Toggle = BalantTab:CreateToggle({
    Callback = function(Value)
       loadstring(game:HttpGet("https://pastebin.com/raw/S5TYmnTm", true))()
    end,
-})
+}) 
+
+local RenderTab = Window:CreateTab("Render", 4483362458) -- Title, Image
+
+local Label = RenderTab:CreateLabel("This Tab is currently Being worked on!")
 
 local CreditsTab = Window:CreateTab("CreditsAndInfo", 4483362458) -- Title, Image
 
 local Label = CreditsTab:CreateLabel("Fully Scripted By Devidk")
-print("Faggot")
-print("If your skidding this shit thats sad because this was worked on by somone who has no idea what he doing so tbh kys| And if you arent THANKS FOR USING THE SCRIPT!")
 local Label = CreditsTab:CreateLabel("More updates to Balant, Player soon and Settings!")
 local Label = CreditsTab:CreateLabel("UI was made by Rayfield. Executor in the works..")
 
+
+
 local SettingsTab = Window:CreateTab("Settings", 4483362458) -- Title, Image
-local Label = CreditsTab:CreateLabel("This Tab is currently Being worked on!")
-
-
+local Label = SettingsTab:CreateLabel("This Tab is currently Being worked on!")
 
 Rayfield:LoadConfiguration()
+
 
