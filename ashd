@@ -22,7 +22,7 @@
          FileName = "Keyfryesmrwhatasd", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
          SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
          GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-         Key = {"zg75K0AS"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+         Key = {"ScriptUpdatesoonX1271"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
       }
    })
 
@@ -69,7 +69,7 @@
          local Button = ScriptsTab:CreateButton({
             Name = "Aurora|Bedwars Script!",
             Callback = function(v)
-               lloadstring(game:HttpGet('https://raw.githubusercontent.com/cocotv666/Aurora/refs/heads/main/Aurora_Loader'))()
+               loadstring(game:HttpGet('https://raw.githubusercontent.com/cocotv666/Aurora/refs/heads/main/Aurora_Loader'))()
             end,
          })
 
@@ -100,18 +100,49 @@
    }) 
 
    local RenderTab = Window:CreateTab("Render", 4483362458) -- Title, Image
+   
+   local Label = RenderTab:CreateLabel("We are working on adding more  to render!")
 
-   local Label = RenderTab:CreateLabel("This Tab is currently Being worked on!")
+   local Button = RenderTab:CreateButton({
+      Name = "Esp",
+      Callback = function()
+          loadstring(game:HttpGet("https://pastebin.com/raw/7K1Jhmck"))()
+      end,
+   })
 
-   local CreditsTab = Window:CreateTab("CreditsAndInfo", 4483362458) -- Title, Image
 
-   local Label = CreditsTab:CreateLabel("Fully Scripted By Devidk")
+
+   local ExtraTab = Window:CreateTab("ExtraScripts", 4483362458) -- Title, Image
+
+   local Button = ExtraTab:CreateButton({
+      Name = "UNC Test",
+      Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua", true))()
+      end,
+   })
+
+
+
+
+   local CreditsTab = Window:CreateTab("Credits And Info", 4483362458) -- Title, Image
+
+   local Label = CreditsTab:CreateLabel("Fully Scripted By Devidk And RayField")
    local Label = CreditsTab:CreateLabel("More updates to Balant, Player soon and Settings!")
-   local Label = CreditsTab:CreateLabel("UI was made by Rayfield. Executor in the works..")
+   local Label = CreditsTab:CreateLabel("UI was made by Rayfield.")
 
 
 
+   
+
+
+
+
+   
+   
    local SettingsTab = Window:CreateTab("Settings", 4483362458) -- Title, Image
+
    local Label = SettingsTab:CreateLabel("This Tab is currently Being worked on!")
 
    Rayfield:LoadConfiguration()
+
+
